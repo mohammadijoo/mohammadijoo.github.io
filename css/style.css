@@ -750,3 +750,51 @@ img {
   color: white;
   transform: translateY(-2px);
 }
+
+.donation-card {
+  max-width: 900px;
+}
+
+.donation-card h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.04em;
+}
+
+.donation-card p {
+  color: var(--text-muted);
+}
+
+.wallet-box {
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(29, 78, 216, 0.18);
+}
+
+.wallet-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+.wallet-box code {
+  display: block;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.donation-warning {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  color: #991b1b;
+  line-height: 1.7;
+}
