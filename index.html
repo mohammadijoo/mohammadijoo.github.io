@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Abolfazl Mohammadijoo | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Abolfazl Mohammadijoo — Robotics, Control Engineering, AI, Machine Learning, and Full-Stack Development."
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Extra page-only styles for the generated index.html file */
+    .skills-catalog {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .skill-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .skill-category-card h3 {
+      margin: 0 0 22px;
+      color: var(--text-main);
+      font-size: 1.35rem;
+      line-height: 1.35;
+      letter-spacing: -0.03em;
+    }
+
+    .skill-item {
+      margin: 18px 0;
+    }
+
+    .skill-item .progress {
+      height: 18px;
+      background: #e9eef7;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .skill-item .progress-bar {
+      width: 0;
+      height: 100%;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 9px;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #2563eb, #14b8a6);
+      color: white;
+      font-size: 0.73rem;
+      font-weight: 600;
+      line-height: 1;
+      transition: width 1.1s ease;
+    }
+
+    .skill-item .progress-value {
+      opacity: 0.95;
+    }
+
+    .lifestyle-card p {
+      margin: 0 0 18px;
+      color: var(--text-muted);
+      text-align: justify;
+    }
+
+    .lifestyle-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .courses-section {
+      justify-content: flex-start;
+    }
+
+    .courses-section .courses-original-content,
+    .courses-section .container,
+    .courses-section .centered,
+    .courses-section .main-area {
+      width: 100%;
+    }
+
+    .courses-section .Courses {
+      background: linear-gradient(135deg, #101827, #1e3a8a);
+      overflow: hidden;
+    }
+
+    .courses-section .Courses_figure {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      padding-top: 28px;
+    }
+
+    .courses-section .Courses_img {
+      width: 132px;
+      height: 132px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 4px solid rgba(255, 255, 255, 0.20);
+    }
+
+    .courses-section .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .courses-section article.card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .courses-section .thumbnail {
+      margin: 0;
+      height: 180px;
+      background: #e9eef7;
+      overflow: hidden;
+    }
+
+    .courses-section .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .courses-section .card-content {
+      padding: 22px;
+    }
+
+    .courses-section .card-content h5 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      line-height: 1.35;
+    }
+
+    .courses-section .card-content h4 {
+      margin: 0 0 10px;
+      font-size: 0.96rem;
+      line-height: 1.55 !important;
+      font-weight: 650;
+    }
+
+    .courses-section .card-content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .courses-section .card-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      .skill-category-card,
+      .courses-section .card-content {
+        padding: 20px;
+      }
+
+      .courses-section .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile top bar -->
+  <header class="mobile-header">
+    <button class="hamburger" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="#home" class="mobile-brand">Abolfazl Mohammadijoo</a>
+  </header>
+
+  <!-- Dark overlay shown when sidebar is open on mobile/tablet -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Left sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="profile">
+      <!-- Replace assets/profile.svg with your real photo, for example assets/profile.jpg -->
+      <img src="assets/Abolfazl_Mohammadijoo.jpg" alt="Abolfazl Mohammadijoo profile photo" class="profile-photo" />
+
+      <h1>Abolfazl Mohammadijoo</h1>
+      <p>Robotics • Control • AI • Full-Stack</p>
+
+      <div class="social-links">
+        <a href="https://github.com/mohammadijoo" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=lre83n8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="mailto:abolfazl.mohamadijoo@alum.sharif.edu">Email</a>
+      </div>
+    </div>
+
+    <nav class="side-nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#education" class="nav-link">Education</a>
+	  <a href="#publication" class="nav-link">Publication</a>
+      <a href="#lifestyle" class="nav-link">Life Style</a>
+      <a href="#courses" class="nav-link">Courses</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="files/CV_Abolfazl_Mohammadijoo.pdf" target="_blank" rel="noopener" class="nav-link resume-link">
+        Download Resume
+      </a>
+    </nav>
+
+    <footer class="sidebar-footer">
+      <small>© 2026 Abolfazl Mohammadijoo</small>
+    </footer>
+  </aside>
+
+  <!-- Right content pane -->
+  <main class="content">
+    <section id="home" class="section hero-section">
+      <div class="hero-content">
+        <p class="eyebrow">Welcome to my portfolio</p>
+        <h2>Hi, I am <span>Abolfazl Mohammadijoo</span>.</h2>
+        <h3>Robotics, Control Engineering, AI, and Full-Stack Developer</h3>
+        <p>
+          I build engineering-focused software systems, intelligent applications, robotics simulations,
+          control algorithms, and educational technical content.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Who I am</p>
+        <h2>About</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          I am a developer and researcher interested in robotics, control systems,
+          machine learning, artificial intelligence, data science, and full-stack software/web development.
+          My work combines engineering mathematics, software architecture, simulation, and practical implementation.
+        </p>
+
+        <div class="about-grid">
+          <div>
+            <strong>Focus Areas</strong>
+            <ul>
+              <li>Robotics and control systems</li>
+              <li>Machine learning and AI applications</li>
+              <li>Scientific computing and simulation</li>
+              <li>Full-stack software/web development</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong>Technical Direction</strong>
+            <ul>
+              <li>Python, C/C++, MATLAB, JavaScript</li>
+              <li>Django, APIs, databases, dashboards</li>
+              <li>Control, dynamics, optimization, data-driven systems</li>
+              <li>Educational course and research content</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+	
+	
+	<section id="experience" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Professional background</p>
+    <h2>Professional Experience</h2>
+  </div>
+
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-card">
+        <h3>Programmer, Data Scientist, Machine Learning Expert</h3>
+        <p class="meta">Self-Employed • Tehran, Iran • July 2013 – Present</p>
+        <p>
+          Delivered 100+ projects for companies and individuals in Data Science,
+          Machine Learning, DevOps, Software Development, and Web Development.
+          Also taught technical lectures and developed online educational products
+          and earned nine FESTO industrial automation certifications in 2016.
+        </p>
+        <p class="tags">
+          Data Science • Machine Learning • DevOps • Software Development • Web Development
+        </p>
+      </div>
+    </article>
+
+    <article class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-card">
+        <h3>Research Assistant</h3>
+        <p class="meta">
+          Worcester Polytechnic Institute • Worcester, MA, USA • January 2011 – August 2011
+        </p>
+        <p>
+          Worked as a research assistant in the Mechanical Engineering Department
+          at WPI. Also lived in the USA for two and a half years and worked as a
+          math tutor at Buffalo State College in 2012.
+        </p>
+        <p class="tags">
+          Research • Mechanical Engineering • Mathematics Tutoring • Academic Support
+        </p>
+      </div>
+    </article>
+
+    <article class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-card">
+        <h3>Project Manager</h3>
+        <p class="meta">
+          Sharif University of Technology • Tehran, Iran • July 2007 – August 2010
+        </p>
+        <p>
+          Managed a 12-member team of graduate students, undergraduate students,
+          and university staff to manufacture a laboratory autonomous underwater
+          robot and develop its control and monitoring software.
+        </p>
+        <p class="tags">
+          Project Management • Autonomous Underwater Robot • Robotics • Control Software
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+	
+	
+	
+	
+	<section id="projects" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-icon">🤖</div>
+          <h3>Robotics & Control Systems</h3>
+          <p>
+            Dynamic modeling, simulation, control design, and robotics software prototypes.
+          </p>
+          <a href="https://github.com/mohammadijoo/Manipulator3D_Rust" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">🧠</div>
+          <h3>Machine Learning / AI</h3>
+          <p>
+            Data science notebooks, ML workflows, classification, regression, and AI applications.
+          </p>
+          <a href="https://github.com/mohammadijoo/Machine_Learning_Tutorials" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>
+            Full-stack websites, dashboards, Django applications, APIs, and frontend interfaces.
+          </p>
+          <a href="https://github.com/mohammadijoo/DjangoClub" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">📚</div>
+          <h3>Technical Courses</h3>
+          <p>
+            University-level tutorials in control engineering, robotics, system dynamics, and AI.
+          </p>
+          <a href="https://github.com/mohammadijoo/Control_and_Robotics_Tutorials" target="_blank" rel="noopener">View Courses</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Technical profile</p>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-catalog">
+          <article class="skill-category-card">
+            <h3>Data Science, Machine Learning and Artificial Intelligence</h3>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Data Science / Data Mining</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Data Science / Data Mining skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Statistics</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Statistics skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Machine Learning</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Machine Learning skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Artificial Intelligence</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Artificial Intelligence skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Neural Networks / Deep Learning</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Neural Networks / Deep Learning skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Computer Vision / Convolutional Networks</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Computer Vision / Convolutional Networks skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Reinforcement Learning</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress" aria-label="Reinforcement Learning skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">85%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Natural Language Processing</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Natural Language Processing skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Large Language Models</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Large Language Models skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>R Programming</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="R Programming skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>ggplot</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="ggplot skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>dplyr / caret / tidyverse</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="dplyr / caret / tidyverse skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>SPSS</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="SPSS skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Numpy</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Numpy skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>SciPy</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="SciPy skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Matplotlib</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Matplotlib skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Pandas</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Pandas skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Scikit-Learn</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Scikit-Learn skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>TensorFlow / Keras</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="TensorFlow / Keras skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>OpenCV</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="OpenCV skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PyTorch</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="PyTorch skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>BERTopic</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="BERTopic skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+          </article>
+          <article class="skill-category-card">
+            <h3>Programming, Software Development and Databases</h3>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>C / C++</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="C / C++ skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Python</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Python skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>C#</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="C# skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Java</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Java skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Golang</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Golang skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Ruby</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress" aria-label="Ruby skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">75%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Matlab / Simulink</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Matlab / Simulink skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Rust</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress" aria-label="Rust skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">75%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Julia</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Julia skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Mathematica</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Mathematica skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Scala</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Scala skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Perl</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Perl skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Multi-Threading</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Multi-Threading skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Design Patterns</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Design Patterns skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Agile / Scrum</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Agile / Scrum skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>WPF / XAML / Winforms</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="WPF / XAML / Winforms skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>C++ Qt (Core / QML)</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="C++ Qt (Core / QML) skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>JavaFX</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress" aria-label="JavaFX skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">75%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PyQt / PySide2</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="PyQt / PySide2 skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>WxPython / TkInter</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="WxPython / TkInter skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PyGame</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="PyGame skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>MySql / SQLite</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="MySql / SQLite skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Microsoft SQL Server</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Microsoft SQL Server skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Entity Framework</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress" aria-label="Entity Framework skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">85%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>MongoDB</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="MongoDB skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PostgreSQL</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="PostgreSQL skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+          </article>
+          <article class="skill-category-card">
+            <h3>Web Development</h3>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>HTML5</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="HTML5 skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>CSS3</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="CSS3 skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>BOOTSTRAP</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="BOOTSTRAP skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Tailwind</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Tailwind skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>SaSS</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="SaSS skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>React.js</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="React.js skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Vue.js</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Vue.js skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Angular.js</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Angular.js skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Three.js</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Three.js skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>WordPress / Elementor</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="WordPress / Elementor skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>WooCommerce</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="WooCommerce skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PHP</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="PHP skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PHP Laravel</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="PHP Laravel skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Django</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Django skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Flask</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Flask skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Fast API</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Fast API skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>ASP.NET</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="ASP.NET skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>JavaScript</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="JavaScript skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>TypeScript</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="TypeScript skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>JQuery / Ajax</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="JQuery / Ajax skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Node.js / Express.js</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Node.js / Express.js skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+          </article>
+          <article class="skill-category-card">
+            <h3>DevOps &amp; Operating Systems</h3>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>DevOps Concepts</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="DevOps Concepts skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Git</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Git skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Docker</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Docker skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Selenium</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress" aria-label="Selenium skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">95%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Robot Framework</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress" aria-label="Robot Framework skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">85%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Maven</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="Apache Maven skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Kubernetes</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Kubernetes skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Jenkins</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Jenkins skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>System Administration</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="System Administration skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>PowerShell</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress" aria-label="PowerShell skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Ubuntu Linux</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Ubuntu Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Fedora Linux</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Fedora Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>CentOS Linux</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="CentOS Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Red Hat Linux</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Red Hat Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Kali Linux</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Kali Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>OpenSUSE Linux</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="OpenSUSE Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Mint Linux</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Mint Linux skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+          </article>
+          <article class="skill-category-card">
+            <h3>Big Data and Cloud Systems</h3>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>AWS</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress" aria-label="AWS skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">85%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Microsoft Azure</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Microsoft Azure skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Google Cloud</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Google Cloud skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Hadoop</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress" aria-label="Apache Hadoop skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Spark</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress" aria-label="Apache Spark skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Hive</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Apache Hive skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Cassandra</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress" aria-label="Apache Cassandra skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">75%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Pig</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Apache Pig skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache HBase</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Apache HBase skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-title">
+                  <span>Apache Kafka</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress" aria-label="Apache Kafka skill level">
+                  <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-value">70%</span>
+                  </div>
+                </div>
+              </div>
+          </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Academic background</p>
+    <h2>Education</h2>
+  </div>
+
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-card">
+        <h3>PhD Candidate in Mechanical Engineering</h3>
+        <p class="meta">Worcester Polytechnic Institute • Worcester, MA, USA • 2011</p>
+        <p>
+          Attended the PhD program in Mechanical Engineering at Worcester Polytechnic
+          Institute. The program was not finished.
+        </p>
+        <p class="tags">
+          Mechanical Engineering • Research • Graduate Studies
+        </p>
+      </div>
+    </article>
+
+    <article class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-card">
+        <h3>Master of Science in Mechanical Engineering</h3>
+        <p class="meta">
+          Iran University of Science and Technology • Tehran, Iran • 2007 – 2010
+        </p>
+        <p>
+          Completed a Master of Science degree in Mechanical Engineering.
+        </p>
+        <p class="tags">
+          Mechanical Engineering • Control • Robotics
+        </p>
+      </div>
+    </article>
+
+    <article class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-card">
+        <h3>Bachelor of Science in Mechanical Engineering</h3>
+        <p class="meta">
+          Sharif University of Technology • Tehran, Iran • 2002 – 2007
+        </p>
+        <p>
+          Completed a Bachelor of Science degree in Mechanical Engineering.
+        </p>
+        <p class="tags">
+          Mechanical Engineering • Engineering Fundamentals • Design
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+<section id="publication" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Research work</p>
+    <h2>Publication</h2>
+  </div>
+
+  <div class="card publication-card">
+    <h3>
+      Trajectory Tracking of a 2-Link Mobile Manipulator Using Sliding Mode Control Method
+    </h3>
+
+    
+
+    <p class="meta">
+      Mohammadijoo, A. • 2023
+    </p>
+
+    <p>
+      Published in
+      <em>
+        World Academy of Science, Engineering and Technology,
+        International Journal of Mechanical and Mechatronics Engineering
+      </em>,
+      Vol. 17, No. 5, 2023.
+    </p>
+
+    <p class="tags">
+      Sliding Mode Control • Mobile Manipulator • Trajectory Tracking • Robotics • Control Engineering
+    </p> 
+	<div class="publication-links">
+      <a href="files/trajectory-tracking-of-a-2-link-mobile-manipulator-using-sliding-mode-control-method.pdf" target="_blank" rel="noopener">Paper</a>
+      <a href="files/best_paper_certificate.pdf" target="_blank" rel="noopener">Award</a>
+      <a href="#" target="_blank" rel="noopener">Animation</a>
+    </div>
+  </div>
+</section>
+
+
+
+    <section id="lifestyle" class="section lifestyle-section">
+      <div class="section-heading">
+        <p class="eyebrow">Personal background</p>
+        <h2>Life Style</h2>
+      </div>
+
+      <article class="card lifestyle-card">
+          <p>I was born in Tehran, capital city of Iran in 19 Oct 1984. I am graduated from one of best high schools of nation, “Energy Atomi High School” in 2002. I received my Bachelor Degree in Mechanical Engineering from best university of Iran, “Sharif University of Technology” in 2007 and received my Master Degree in Mechanical Engineering from one of top 5 universities of country, “Iran University of Science and Technology” in 2010. I attended in PhD program in WPI University in USA at Jan 2011, but had to quit the PhD after 1 year. I have lived in USA since Jan 2011 to May 2013 and I have visited many states of USA during my stay. I would love to travel worldwide as much as I can and also have visited 8 countries so far.</p>
+          <p>Moreover, I am very fluent in English and am a little familiar with French, German and Arabic languages (my native language is Farsi). The passionate and love of learning guided me to &quot;never stop learning and experiencing new things&quot; lifestyle. So, I have read many books in fields like Science, History, Sociology, Religions, Novels and etc since when I was teenager. I honestly can tell that I have never seen someone like myself (between communities I belonged), that watched many Movies and TV-series and listened in many Music Discographies in many languages (like a professional artist in Cinema and Music Industry). I also always care about my health and I do my routine home fitness workouts daily and I am professional player in Soccer, Mountain Climbing, Backgammon and Chess since I was teenager.</p>
+          <p>My passion and love of learnings, led me to variety of knowledge in many fields. In year 2019, due to my strong interest, I changed my scientific field to “Theoretical Physics” and I have finished learning bachelor courses of physics and I will continue my studies in this field for next months and years.</p>
+          <p>Besides, I have a valuable knowledge of many programming languages like C++, C#, Python, Java, JavaScript, Ruby and etc. I also tried to learn all of new technologies in Web Development formerly, but my plan (which is started last year) for next years, would be research in field of “Theoretical Physics”.</p>
+          <p>A little more about me:</p>
+          <p>My master degree is in Robotic and Control Engineering and I always loved this research field, but at the same time I loved to learn about computer engineering and Electrical Engineering. So, I started to learn all of bachelor courses of Electrical Engineering and all of bachelor courses of Computer Engineering since 5 2016. Now, my knowledge in Electrical engineering is at BSc level and in Computer engineering is at BSc level too and I have an official Master Degree in Mechanical Engineering (Control &amp; Robotics).</p>
+          <p>I love “programming” and “AI” and I have learned a lot of programming languages and “ML” related subjects, since 2015. I teach programming and Machine Learning and I have a considerable knowledge in IT and web development and I teach them as well. You can find more details about it, in my resume page.</p>
+          <p>In Year 2019, after watching some documentaries in field of Particle Physics and Astro-Physics and Big Bang Theory, I found a strong interest in myself about Theoretical Physics. So, as always, I started to learn more about Physics and I finished bachelor courses of “Physics” in 2019. Maybe in future, I will continue my Studies in Physics to PhD level, especially in fields of “Particle Physics” and “Astro-Physics”. I hope, someday I can solve some mysterious unsolved problems in physics and about origin of universe and unification of standard model and etc. I hope my god will help me, like always was with me in my whole life.</p>
+          <p>Since 2020, I focused on some research topics in Artificial Intelligence like, Machine Learning, Neural Networks, Deep Learning, Computer Vision, Game Theory, Fuzzy Systems, Natural Language Processing, Quantum Computing, Graph Theory, Metaheuristic Optimization, Nonlinear Optimization and Reinforcement Learning and I will continue my research in these fields in next years as one of my specialties and I have a plan to publish papers in those fields in future.</p>
+      </article>
+    </section>
+
+    <section id="courses" class="section courses-section">
+      <div class="section-heading">
+        <p class="eyebrow">Academic and self-study background</p>
+        <h2>Courses</h2>
+      </div>
+
+<div class="courses-original-content">
+<div class="container">
+
+
+
+<div class="card courses-intro-card">
+  <div class="courses-intro-content">
+    <p class="eyebrow">Academic and technical background</p>
+    <h3>Courses I Have Learned</h3>
+
+    <p>
+      In this page, I have listed all of the courses I have learned till now.
+      These are the official topics of courses taught in universities. Beside
+      these courses, I also have many skills in programming, web development,
+      and software development, which are described in detail in my
+      <a href="https://mohammadijoo.ir/en/resume" rel="noopener" target="_blank">
+        resume
+      </a>.
+    </p>
+
+    <p>
+      As my major and my BSc and MSc degrees are in Mechanical Engineering, I
+      have learned university-level courses in Mechanical Engineering. I also
+      learned courses in Electrical Engineering, Computer Engineering, Physics,
+      Chemistry, and Mathematics independently through ebooks, video tutorials,
+      institutes, and university resources.
+    </p>
+
+    <p>
+      I also have nine certifications in Automation Engineering, earned through
+      24-hour theoretical and practical workshops for each topic at 
+	  <a href="files/Certificate_Abolfazl_Mohammadijoo.pdf" rel="noopener" target="_blank">
+        FESTO's
+      </a>
+	  educational center.
+    </p>
+  </div>
+</div>
+
+
+<br/><br/>
+<main class="main-area">
+<div class="centered">
+<section class="cards">
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Eng.jpg"/>
+</figure>
+<div class="card-content" id="general">
+<h5 style="color:#C14242">Common Courses in Engineering</h5>
+<br/>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">General Mathematics 1  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">General Mathematics 2  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">General Physics 1  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">General Physics 2  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">General Physics Labratories  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">General Chemistry  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">Industrial Drawing 1 &amp; 2  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">Programming Language  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">Differential Equations  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">Engineering Mathematics  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Common" title="Reference: A course at Sharif University of Technology">Numerical Calculation  </a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Mech_Eng.jpg"/>
+</figure>
+<div class="card-content" id="Mechanical">
+<h5 style="color:#C14242">Mechanical Engineering</h5> <br/>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Engineering Static  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Engineering Dynamic  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">ThermoDynamic 1  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">ThermoDynamic 2  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Fluid Mechanics 1  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Fluid Mechanics 2  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Vibrations  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Linear Control Systems  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Dynamic of Machinery  </a> <a href="https://faradars.org/courses/fvmec95071-vehicle-dynamics-and-kinematics" rel="noopener" target="_blank"> (+ Online Course) </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Design of Machine Components 1  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Design of Machine Components 2  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Material Science  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Strength of Materials 1  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Strength of Materials 2  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Fundamental of Electrical Engineering 1  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Heat Transfer 1  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Heat Transfer 2  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Production Methods  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Welding Theory  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Structure Analysis  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Hydraulics and Pneumatics  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Internal Combustion Engines  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Turbo Machines  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Ship Technology  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">HydroStatic of Marine Vessels  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">HydroDynamic of Marine Vessels  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Marine Engineering  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Sharif University of Technology">Underwater Engineering  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Mechanical" title="Reference: A course at Worcester Polytechnique Institute (Graduate Course)">Computational Fluid Dynamic </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mechanism-design-and-optimization-in-matlab-fvma0041" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Mechanism Design and Optimization        </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvticvl126-finite-element-method" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Finite Element Method →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimec103-basic-theory-of-plates-and-shells" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Theory of Plates and Shells (I) →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvma9803-introduction-to-principles-of-sonar-function-and-its-simulation-in-matlab" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Principles of Sonar Sensors →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-become-an-hvac-pro_the-ultimate-hvac-guide/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> HVAC Systems →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-complete-guide-to-refrigeration-hvac-systems-cryogenics/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Refrigeration and Cryogenics →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-micro-electromechanical-systems-mems-technology/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Micro-Electromechanical Systems (MEMS) →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-acoustics-for-beginners/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Acoustics →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-remotely-operated-vehicles-rovs-a-subsea-enabler/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Remotely Operated Vehicles (ROVs)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Elec_Eng.jpg"/>
+</figure>
+<div class="card-content" id="Electrical">
+<h5 style="color:#C14242">Electrical Engineering</h5>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee110-electrical-circuits-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Basic Circuit Theory 1 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee102-electrical-circuits-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Basic Circuit Theory 2 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fveee9807-logical-circuit-review-and-problem-solving" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Logical Circuits </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvst9405-introduction-probability-and-statistics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Engineering Statics and Probability </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvssa9408-analysis-of-signals-and-systems" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Signal and System Analysis </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee95091-electromagnetism-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Engineering Electromagnetism </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="#Electrical" title="Reference: A course at Sharif University of Technology"> Linear Control Systems </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://maktabkhooneh.org/course/%D9%85%D8%AF%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9-%DB%B1-mk163/" title="Reference: A course by Behzad Razavi at UCLA University"> Electronic 1 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee104-electronics-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Electronic 2 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee96022-electronics-iii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Electronic 3  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvpwr107-electrical-machinery-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Electrical Machine 1 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvpwr103-electrical-machinery-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Electrical Machine 2 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel95111-basic-of-telecommunication-systems" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Basics of Telecommunication System </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel102-telecommunications-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Analog Telecommunication System (Telecommunication 1) </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvssa9511-digital-and-analog-telecommunication" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Digital Telecommunication System (Telecommunication 2) 
+                   </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee9708-coding-theory" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Coding Theory </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://ocw.mit.edu/courses/6-450-principles-of-digital-communications-i-fall-2006/" rel="noopener" target="_blank" title="Reference: A 'graduate course' at MIT university by professor Robert Gallager"> PRINCIPLES OF DIGITAL COMMUNICATIONS  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel107-wireless-telecommunications-systems" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Wireless Telecommunication System  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-radar-engineering-radar-systems-deep-dive-in-radar/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> RADAR Engineering  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://www.youtube.com/watch?v=6R7JDkpG1Wk&amp;list=PLrjkTql3jnm8HbdMwBYIMAd3UdstWChFH&amp;index=1" rel="noopener" target="_blank" title="Reference: A video lecture from youtue (click on the link)"> MicroProcessors &amp; MicroControllers  </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee0013-logic-circuits" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Digital System 1 </a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee112-fields-and-waves" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Fields and Waves →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtitel102-wave-propagation" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Wave Propagation →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel106-microwave" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Microwave →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee97031-detection-theory" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Detection Theory →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel105-antenna-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Antenna I →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel103-antenna-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Antenna II →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-antenna-arrays-for-radar-and-communications/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Antenna Arrays for Radar and Communications →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee98083-project-oriented-of-processing-design-of-radar-screen" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Design of Radar Screen →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel104-communication-circuits" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Tele-Communication Circuits →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-radio-frequency-rf-circuits-and-systems-basic-concepts/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Radio-Frequency (RF) Circuits and Systems →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://faradars.org/courses/principles-of-designing-rf-and-microwave-circuits-fvtel004" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Microwave Circuits →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-learn-digital-signal-processing-from-basics-to-advance/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Digital Signal Processing →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-digital-signal-processing-dsp-from-ground-uptm-using-arduino/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Digital Signal Processing (DSP) Using Arduino →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-masterclass-digital-communication-and-information-theory/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Information Theory →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-designing-rf-communication-systems-using-sdrs-with-gnu-radio/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Designing RF Communication Systems Using SDRs with GNU Radio →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+<h4 style="line-height:150%;"><a data-toggle="tooltip" href="https://downloadly.ir/elearning/video-tutorials/wireless-digital-communications-and-signal-processing/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Wireless Digital Communications and Signal Processing →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px">In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Software_Eng.png"/>
+</figure>
+<div class="card-content" id="Computer">
+<h5 style="color:#C14242">Computer Engineering </h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft110-theory-of-languages-and-machines" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Automata Theory  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvds9402-data-structures" rel="noopener" target="_blank" title="Reference: A course by Coursera E-Learning + A course by FaraDars E-Learning"> Data Structures  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft101-discrete-mathematics-problem-solving" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Discrete Mathematics and Discrete Structures  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft1092-algorithm-design" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Algorithm Design  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://cs.stanford.edu/people/widom/DB-mooc.html" rel="noopener" target="_blank" title="Reference: A course by Jennifer Widom at Stanford University"> Introduction to Databases  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Computer" title="Reference: A course by University of Washington at Coursera E-Learning"> Hardware Software Interface (Computer Organization)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft112-computer-architecture" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">   Introductory Computer Architecture  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft9610-advance-computer-architecture-problem-solving" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Advanced Computer Architecture    </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft104-compiler-design" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Compiler Design  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft103-operating-systems" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Operating Systems    </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft113-computer-networks-part-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Computer Networks 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsfte114-computer-networks-ii-problem-solving" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Computer Networks 2  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.youtube.com/watch?v=6R7JDkpG1Wk&amp;list=PLrjkTql3jnm8HbdMwBYIMAd3UdstWChFH&amp;index=1" rel="noopener" target="_blank" title="Reference: A video lecture from youtue (click on the link)"> MicroProcessors &amp; MicroControllers  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Computer" title="Reference: many courses by lots of E-Learning platforms">  Advanced Programming Languages </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft117-assembly-programming" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Assembly Programming Language </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft118-implementation-of-programming-languages" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Design and Implementation of Programming Languages </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft115-software-engineering-1" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Software Engineering 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft129-advanced-software-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Software Engineering 2 (Advanced)
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft106-data-storage-and-retrieve" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Information Retrieval and Storage </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvsft95031-parallel-algorithm-and-parallel-processing" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Parallel Algorithms and Parallel Processing  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtel9504-computer-network-security" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Computer Network Security  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/quantum-computing-fvphy9909" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Quantum Computing  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-cryptography-a-hands-on-approach/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Cryptography  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Physics.jpg"/>
+</figure>
+<div class="card-content" id="PHYSICS">
+<h5 style="color:#C14242">PHYSICS and Nuclear Engineering</h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://maktabkhooneh.org/course/%D9%81%DB%8C%D8%B2%DB%8C%DA%A9-3-mk251/" rel="noopener" target="_blank" title="Reference: A course by Dr Ejtehadi at Sharif University of Technology">General Physics 3 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.wiley.com/en-us/Modern+Physics%2C+4th+Edition-p-9781119495468" rel="noopener" target="_blank" title="Reference: Entire of Ebook (Modern Physics by K.S. Krane, 3rd edition)"> General Physics 4 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Mathematical-Methods-Physicists-Comprehensive-Guide/dp/0123846544" rel="noopener" target="_blank" title="Reference: Chapter 1 to 8 of Ebook (Mathematical Methods for Physicist by G.B. Arfken, 7th edition)"> Mathematical Physics (I) </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mathematical-physicss-ii-fvphy146" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Mathematical Physics (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mathematics-and-physics-iii-fvhsmth120" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Mathematical Physics (III)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee125-waves-and-vibrations" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Waves and Vibrations  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Concepts-Thermal-Physics-Stephen-Blundell/dp/0199562105" rel="noopener" target="_blank" title="Reference: First half of Ebook (Consepts in Thermal Physics by S. Blundell, 2nd edition)"> Thermodynamics and Statistical Physics 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Concepts-Thermal-Physics-Stephen-Blundell/dp/0199562105" rel="noopener" target="_blank" title="Reference: Second half of Ebook (Consepts in Thermal Physics by S. Blundell, 2nd edition)"> Thermodynamics and Statistical Physics 2 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Classical-Dynamics-Particles-Systems-Thornton/dp/0534408966" rel="noopener" target="_blank" title="Reference: First half of Ebook (Classical Dynamics of Particles and Systems by S.T. Thornton, 5th edition)"> Analytical Mechanics 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Classical-Dynamics-Particles-Systems-Thornton/dp/0534408966" rel="noopener" target="_blank" title="Reference: Second half of Ebook (Classical Dynamics of Particles and Systems by S.T. Thornton, 5th edition)"> Analytical Mechanics 2 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="http://www.fisica.ugto.mx/~ggutj/CV/Text.pdf" rel="noopener" target="_blank" title="Reference: First half of Ebook (Introduction to Electrodynamics by David J. Griffiths, 4th edition)"> Electromagnetism 1</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="http://www.fisica.ugto.mx/~ggutj/CV/Text.pdf" rel="noopener" target="_blank" title="Reference: Second half of Ebook (Introduction to Electrodynamics by David J. Griffiths, 4th edition)"> Electromagnetism 2</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Introduction-Quantum-Mechanics-David-Griffiths/dp/0131118927" rel="noopener" target="_blank" title="Reference: First half of Ebook (Introduction to Quantum Mechanics by David J. Griffiths, 2nd edition)"> Quantum Mechanics 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.amazon.com/Introduction-Quantum-Mechanics-David-Griffiths/dp/0131118927" rel="noopener" target="_blank" title="Reference: Second half of Ebook (Introduction to Quantum Mechanics by David J. Griffiths, 2nd edition)"> Quantum Mechanics 2 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.youtube.com/watch?v=an8fWwECJVM&amp;list=PLTBqohhFNBE_fZu9cpbluJAq2yECyV8ZL" rel="noopener" target="_blank" title="Reference: A course  by Prof Robert de Mello Koch (African Institute for Mathematical Sciences at South Africa) "> Electromagnetism Theory </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiphy109-plasma-physics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Plasma Physics </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvphy117-laser-physics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Laser Physics  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiphy106-principles-of-elementary-particle-physics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Principles of Elementary Particle Physics  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiphy105-principles-of-gravitation" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Principles of Gravitation  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvphy107-special-relativity" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Special Relativity  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/advanced-quantum-mechanics-i-fvtiphy114" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Advanced Quantum Mechanics (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiphy108-advanced-of-quantum-mechanics-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Advanced Quantum Mechanics (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/quantum-field-theory-i-fvphy139" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Quantum Field Theory (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/nanoelectronics-i-fvphy144" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Nano-Electronics (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/quantum-entangled-systems-fvphy0061" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Quantum Entangled Systems  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvphy9703-optics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Optics (Optique)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvphy120-fourier-optics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Fourier Optics  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiphy9711-magnetic-fractions" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Magnetic Ferrofluid  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/the-great-courses-nuclear-physics-explained/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Nuclear Physics  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-ne101-fundamentals-of-nuclear-science-and-engineering-2/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Nuclear Science and Engineering  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/control.jpg"/>
+</figure>
+<div class="card-content" id="Control">
+<h5 style="color:#C14242">Control / Robotic Engineering</h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Advanced Robotics (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Nonlinear Control (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">System Dynamics (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Continium Mechanics (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Advance Dynamic (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Advance Vibration (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Advance Mathematics (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Control" title="Reference: A course at Iran University of Science and Technology">Advance Numerical Calculation (Graduate Course)  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mvrfz9105-fuzzy-systems-in-matlab" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">Fuzzy Systems and Fuzzy Control </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvrctr110-nonlinear-systems-analysis" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Nonlinear System Analysis  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvctr9511-modern-control-problem-solving" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Modern Control 
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmec9704-analytical-dynamics-with-simulation-in-matlab" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Analytical Dynamic        </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiee120-adaptive-control" rel="noopener" target="_blank" title="Reference: Two (Introductory and Complementary) Courses by FaraDars E-Learning"> Adaptive Control 
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvctr9602-digital-control" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Digital Control 
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvrctr111-optimal-control" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Optimal Control 
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvctr95013-model-predictive-control-using-matlab" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Model predictive control (MPC) 
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvee9605-multivariable-control" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Multi-Variable Control  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvctr9501-designing-h-infinity-robust-controller-using-robust-control-algorithm" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Robust Control  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Aerospace_Engineering.png"/>
+</figure>
+<div class="card-content" id="Aerospace">
+<h5 style="color:#C14242">Aerospace Engineering</h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-astronomy-celestial-mechanics-and-star-systems/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Orbital and Celestial Mechanics    </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmec95033-aerodynamics-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Aerodynamics (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/aerodynamics-ii-fvars302" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Aerodynamics (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvcvl106-basic-structural-analysis-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Structural Analysis (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvcvl112-advanced-analyze-of-structures" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Structural Analysis (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-aerospace-engineering-rocket-science-and-engineering/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Rocket Science and Engineering  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-missile-and-rocket-simulations-in-c/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Missile and Rocket Simulations in C++  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-aerospace-engineering-aircraft-aerodynamics/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Aircraft Aerodynamics  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-an-introduction-to-helicopter-aerodynamics/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Helicopter Aerodynamics  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-aerospace-engineering-jet-engine-fundamentals/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Jet Engine Fundamentals  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-the-jet-engine-mastering-gas-turbine-technology/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Gas Turbine Technology  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mechanics-of-flight-fvmec139" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Mechanics of Flight (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-aerospace-engineering-avionics-and-aerospace-systems/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Avionics and Aerospace Systems  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-aircraft-design-project-guide-aerospace-engineering/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Aircraft Design Project  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-practice-and-theory-intro-for-satellite-remote-sensing/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Satellite Remote Sensing  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-satellite-cybersecurity-foundations/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Satellite Cybersecurity  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/inertial-navigation-and-its-simulation-in-matlab-fvars330" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Inertial Navigation Systems  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-industrial-fuel-combustion-systems-for-engineers/" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Industrial Fuel Combustion Systems  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Material_Engineering.jpg"/>
+</figure>
+<div class="card-content" id="Material">
+<h5 style="color:#C14242">Material Engineering</h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmec9509-materials-science-and-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Materials Science and Engineering  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvcvl104-crystallography" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Crystallography  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme101-mechanical-properties-materials-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Mechanical Properties of Materials (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme102-mechanical-properties-materials-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Mechanical Properties of Materials (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme104-physical-metallurgy-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Physical Metallurgy (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme113-physical-metallurg-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Physical Metallurgy (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/composite-engineering-fvplm105" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Composite Engineering  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme103-composites-and-their-applications-in-industry" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Composites and Their Applications in Industry  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme105-corrosion-and-oxidation" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Corrosion and Oxidation  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme103-casting-and-solidification-metal" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Casting and Solidification of Metals  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme110-cathodic-and-anodic-protection" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Cathodic and Anodic Protection  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/design-of-cathodic-protection-systems-fvmme114" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Design of Cathodic Protection Systems  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme116-heat-treatment" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Heat Treatment  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmec112-metal-forming" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Metal Forming  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9704-introduction-to-catalysts" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Introduction to Catalysts  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme9605-metal-extraction-i-iron-and-steel" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Metal Extraction I (Iron and Steel)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme9607-welding-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Welding Engineering  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme101-principles-of-surface-engineering-basic" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Surface Engineering (I)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimme119-advanced-surface-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Surface Engineering (II)  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9512-science-flow-and-deformation-currents-rheology" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Rheology  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche95101-crystallization-processes" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Crystallization Processes  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/polymer-shaping-processes-fvplm001" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Polymer Shaping Processes  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmme106-materials-characterization" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Advanced Materials Characterization  →
+                   <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/AI.jpg"/>
+</figure>
+<div class="card-content" id="Artificial">
+<h5 style="color:#C14242"> Artificial Intelligence and Data Science</h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="http://ce.sharif.edu/courses/97-98/2/ce417-2/resources/root/Textbook/Artificial%20Intelligence%20-%20A%20Modern%20Approach.pdf" rel="noopener" target="_blank" title="Reference: 'Artificial Intelligence: A Modern Approach', a textbook by 'Peter Norvig and Stuart J. Russell' (entire ebook)">   Artificial Intelligence
+                   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.coursera.org/learn/machine-learning" rel="noopener" target="_blank" title="Reference: A course by Andrew Ng at Stanford University"> Machine Learning  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://hagan.okstate.edu/NNDesign.pdf" rel="noopener" target="_blank" title="Reference: 'Neural Network Design' by 'Martin T. Hagan' (entire ebook)">   Neural Networks  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://link.springer.com/book/10.1007/978-981-13-6794-6" rel="noopener" target="_blank" title="References: A course by Coursera E-Learning &amp; Ebook: Advances in Deep Learning by M. ArifWani and others"> Deep Learning  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.udemy.com/course/computer-vision-a-z/" rel="noopener" target="_blank" title="Reference: (Computer Vision: A-Z) A course by Udemy E-Learning">Computer Vision  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv" rel="noopener" target="_blank" title="References: A course by Andrew Ng at Coursera E-Learning &amp; A course by Fei-Fei group at Stanford University in 2017 (Convolutional Neural Networks for Visual Recognition)">Convolutional Neural Networks  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://gb.coursera.org/learn/game-theory-1" rel="noopener" target="_blank" title="Reference: A course by Coursera E-Learning"> Game Theory 1  </a>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.udemy.com/course/beginner-master-rl-1/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Reinforcement Learning  </a>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.udemy.com/course/natural-language-processing-in-python/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning">  Natural Language Processing  </a>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.coursera.org/specializations/statistics" rel="noopener" target="_blank" title="Reference: A course by Coursera E-Learning from Duke University">  Statistical Analysis  </a> <br/><br/>
+<h6 style="color:#C14242"> Metaheuristics Optimization Algorithms ↓ </h6>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mvrga9011-genetic-algorithm-video-tutorials-pack" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Genetic Algorithm </a>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvriw101-invasive-weed-optimization-video-tutorial-in-matlab" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning &amp; Original Paper of Algorithm"> Invasive Weed Optimization (IWO) </a>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/mvric9012-imperialist-competitive-algorithm-video-tutorials-pack" rel="noopener" target="_blank" title="Reference: A complete course by FaraDars E-Learning &amp; Original Paper of Algorithm"> Imperialist Competitive Algorithm (ICA) </a>
+</h4></h4></h4></h4></h4></h4></h4></div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/Automation.jpg"/>
+</figure>
+<div class="card-content" id="Automation">
+<h5 style="color:#C14242">Automation Engineering</h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> MODERN INDUSTRIAL PNEUMATICS </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> ADVANCED PNEUMATICS </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> MODERN INDUSTRIAL HYDRAULICS </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> MASTERING MOBILE HYDRAULICS </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> PROPORTIONAL HYDRAULICS </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> MAINTENANCE AND TROUBLES SHOOTING OF HYDRAULICS SYSTEM </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 2 days workshop at educational center of FESTO Company"> PRINCIPLES OF INDUSTRIAL MEASUREMENT AND INSTRUMENTATION </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 2 days workshop at educational center of FESTO Company"> BASIC PRINCIPLES OF SENSOR TECHNOLOGY FOR PROFESSIONAL TRAINING </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="files/Certificates - Abolfazl Mohammadijoo .pdf" rel="noopener" target="_blank" title="Reference: A 3 days workshop at educational center of FESTO Company"> BASIC PROGRAMMING OF PLCs  </a></h4> <br/>
+<h6 style="color:#C14242">Embedded Systems ↓</h6>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/how-to-learn/microcontroller" rel="noopener" target="_blank" title="Reference: An Introductory + Complementary Course by Faradars E-Learning"> AVR Microcontrollers </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/how-to-learn/arduino" rel="noopener" target="_blank" title="Reference: An Introductory + Complementary Course by Faradars E-Learning">   Arduino Boards </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiee120-adaptive-control" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Raspberry-Pi Mini Computers → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/mathematics.jpg"/>
+</figure>
+<div class="card-content" id="Mathematics">
+<h5 style="color:#C14242"> Mathematics </h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%A2%D9%86%D8%A7%D9%84%DB%8C%D8%B2-%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C-mk183/" rel="noopener" target="_blank" title="Reference: A course by Amir Kabir University at Maktabkhooneh E-Learning"> Introduction to Mathematical Analysis </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvst9405-introduction-probability-and-statistics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Probability 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmth105-linear-algebra" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Linear Algebra </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth114-introduction-to-numerical-methods-in-linear-algebra" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Numerical Methods in Linear Algebra </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmth106-basic-of-number-theory" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Number Theory   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth111-principles-of-real-analysis" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Real Analysis   </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth105-complex-functions" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">  Complex Functions  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth104-principles-of-general-topology" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> General Topology  </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/quantum-computing-fvphy9909" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Quantum Computing →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvmth110-combinations-and-applications" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Combinations Theory →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/graphs-and-matrix-fvmth123" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Algebraic Structures →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth113-introduction-to-modul-theory-advanced-algebra" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Theory of Moduli (Advanced Algebra) <br/> →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/riemannian-geometry-fvgmt003" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Riemannian Geometry →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth116-graphs-and-groups" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Groups and Graphs Theory → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth102-finsler-geometry" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Finsler Geometry →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth122-commutative-algebra" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Commutative Algebra →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth108-permutation-groups" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Permutation Groups →
+                        <span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtimth109-noncommutative-rings-theory" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Noncommutative Ring in Algebra → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/chemistry.jpg"/>
+</figure>
+<div class="card-content" id="CHEMISTRY">
+<h5 style="color:#C14242"> CHEMISTRY &amp; Chemical Engineering </h5>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://ocw.mit.edu/courses/chemistry/5-111-principles-of-chemical-science-fall-2008/" rel="noopener" target="_blank" title="Reference: A course by Dr. Elizabeth Vogel Taylor at MIT University "> General Chemistry 1 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://ocw.mit.edu/courses/chemistry/5-111-principles-of-chemical-science-fall-2008/" rel="noopener" target="_blank" title="Reference: A course by Prof. Catherine Drennan at MIT University "> General Chemistry 2 </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvga9503-principles-of-genetics" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning">   Introduction to Genetic Science     </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche103-mass-transfer" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Mass Transfer → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtiche102-material-and-energy-balance" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Material and Energy Balance → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9509-introduction-to-chemical-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Introduction to Chemical Engineering  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9508-unit-operation-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Unit Operation (I)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche95111-problem-solving-unit-operation-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Unit Operation (II)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch103-organic-chemistry-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Organic Chemistry (I)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch104-organic-chemistry-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Organic Chemistry (II)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch105-organic-chemistry-iii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Organic Chemistry (III)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch9602-inorganic-chemistry-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Inorganic Chemistry (I)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtich108-inorganic-chemistry-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Inorganic Chemistry (II)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch101-physics-chemistry" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Physics Chemistry (I)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/chemistry-and-physics-2-tips-and-test-for-senior-exam-fvch309" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Physics Chemistry (II)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/chemistry-physics-iii-fvch109" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Physics Chemistry (III)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch96101-analytical-chemistry-i" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Analytical Chemistry (I)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch9611-analytical-chemistry-ii" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Analytical Chemistry (II)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtich123-basics-of-synthesis-in-organic-chemistry" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Synthesis in Organic Chemistry  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtich101-organometallic-chemistry" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Organometallic Chemistry  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtich104-advanced-organic-chemistry-reactions-mechanism-and-structure" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Advanced Organic Chemistry (Reactions, Mechanism and Structure)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvtich117-identification-of-organic-compounds" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Identification of Organic Compounds  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch9510-new-methods-of-synthesis-of-organic-compounds" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> New Methods of Synthesis of Organic Compounds  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche106-introduction-to-photocatalytic-reaction-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Photo-Catalytic Reaction Engineering  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9411-chemical-reaction-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Chemical Reaction Engineering  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9507-structure-of-fuel-cells" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Structure of Fuel Cells  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche97021-designing-and-operationing-of-solid-oxide-fuel-cells" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Solid Oxide Fuel Cells (SOFC)  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche97072-lithium-battery" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Lithium Batteries  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvche9606-process-control-in-chemical-engineering" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Process Control in Chemical Engineering  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/fvch9605-application-of-spectroscopy-in-organic-chemistry" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Spectroscopy in Organic Chemistry  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://faradars.org/courses/design-and-fabrication-of-fluidized-bed-reactor-fvche002" rel="noopener" target="_blank" title="Reference: A course by FaraDars E-Learning"> Design and Fabrication of Fluidized-Bed Reactor  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/udemy-infrared-ir-spectroscopy-analyzing-any-ir-spectrum/" rel="noopener" target="_blank" title="Reference: A course by Udemy E-Learning"> Infrared (IR) Spectroscopy  → <br/>
+<span style="background-color:#B0C4DE; padding:2px; border-radius:3px"> In Progress</span>
+</a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/software.jpg"/>
+</figure>
+<div class="card-content" id="Software">
+<h5 style="color:#C14242">Software</h5>
+<h4 style="line-height:200%;"><a href="#Software"> Matlab &amp; Simulink </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> Mathematica </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> Solidworks </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> Fluid Sim </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> Proteus </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> CodevisionAVR </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> Adobe Photoshop </a></h4>
+<h4 style="line-height:200%;"><a href="#Software"> Adobe Premiere </a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+<article class="card">
+
+<figure class="thumbnail">
+<img alt="Course thumbnail" src="assets/art.jpg"/>
+</figure>
+<div class="card-content" id="Other">
+<h5 style="color:#C14242"> Other Courses </h5>
+<br/>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="#Others" title="Reference: An Introductory Course by FaraDars E-Learning"> Photography </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://www.limoonad.com/course/195793/%D9%BE%DA%A9%DB%8C%D8%AC-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%A6%D9%88%D8%B1%DB%8C-%D9%85%D9%88%D8%B3%DB%8C%D9%82%DB%8C" rel="noopener" target="_blank" title="Reference: A Course by limoonad website">
+                 Music Theory
+               </a></h4>
+<h4 style="line-height:200%;"><a data-toggle="tooltip" href="https://en.git.ir/the-great-courses-war-in-the-modern-world/" rel="noopener" target="_blank" title="Reference: A Course by Udemy E-Learning">
+                 War in the Modern World
+               </a></h4>
+</div>
+<!-- .card-content -->
+
+</article>
+<!-- .card -->
+</section>
+<!-- .cards -->
+</div>
+<!-- .centered -->
+</main>
+</div>
+
+</div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:a.mohamadijoo@gmail.com">
+          <strong>Email</strong>
+          <span>a.mohamadijoo@gmail.com</span>
+        </a>
+
+        <a class="contact-card" href="https://github.com/mohammadijoo" target="_blank" rel="noopener">
+          <strong>GitHub</strong>
+          <span>github.com/mohammadijoo</span>
+        </a>
+
+        <a class="contact-card" href="https://mohammadijoo.ir/en" target="_blank" rel="noopener">
+          <strong>Website</strong>
+          <span>mohammadijoo.ir/en</span>
+        </a>
+      </div>
+	  <div class="contact-grid">
+        
+
+        <a class="contact-card" href="https://www.youtube.com/@abolfazlmohammadijoo" target="_blank" rel="noopener">
+          <strong>YouTube Channel</strong>
+          <span>@abolfazlmohammadijoo</span>
+        </a>
+		
+		<a class="contact-card" href="https://t.me/abolfazlm1363?&text=Abolfazl%2520Mohammadijoo">
+          <strong>Telegram</strong>
+          <span>@abolfazlm1363</span>
+        </a>
+
+        <a class="contact-card" href="https://wa.me/989124908372" target="_blank" rel="noopener">
+          <strong>Whatsapp</strong>
+          <span>+98 912 490 8372</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
