@@ -724,3 +724,29 @@ img {
     text-align: left;
   }
 }
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.publication-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.publication-links a:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
