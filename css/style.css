@@ -825,3 +825,48 @@ img {
   text-decoration: none;
 }
 
+/* Softer typography for small UI text only.
+   Keeps hero titles/headings unchanged. */
+
+.btn,
+.nav-link,
+.social-links a,
+.project-card a,
+.project-links a,
+.publication-links a,
+.skill-title,
+.chip-group span,
+.meta,
+.tags {
+    font-family: "Segoe UI", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500 !important;
+    letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Keep important clickable elements slightly stronger, but not too heavy */
+.btn,
+.resume-link,
+.nav-link.active {
+    font-weight: 600 !important;
+}
+
+/* Make progress-bar labels cleaner and less bold */
+.skill-title {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.skill-title span:last-child {
+    font-weight: 500 !important;
+    color: var(--text-muted);
+}
+
+/* Optional: make project/course small pills more elegant */
+.project-links a,
+.chip-group span,
+.publication-links a {
+    font-weight: 500 !important;
+    letter-spacing: 0;
+}
