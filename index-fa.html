@@ -152,6 +152,59 @@
             if (typeof window.localizePortfolioToPersian === "function") {
               window.localizePortfolioToPersian(document.body);
             }
+
+            // Use the Persian CV on the Persian portfolio page.
+            const persianResumeLink = document.querySelector("a.resume-link");
+            if (persianResumeLink) {
+              persianResumeLink.href = "files/CV_Abolfazl_Mohammadijoo_FA.pdf";
+            }
+
+
+            // Localize the new grouped skill labels introduced in index.html.
+            const groupedSkillTranslations = {
+          "Classical Control / PID / Lead-Lag": "کنترل کلاسیک / PID / جبران‌ساز پیش‌فاز-پس‌فاز",
+          "State-Space / Observers / Pole Placement": "فضای حالت / ناظرها / جایابی قطب",
+          "Optimal Control / LQR / LQG": "کنترل بهینه / LQR / LQG",
+          "Robust / Nonlinear / Sliding Mode Control": "کنترل مقاوم / غیرخطی / مد لغزشی",
+          "Adaptive Control / MPC": "کنترل تطبیقی / MPC",
+          "System Identification / Kalman Filtering / Sensor Fusion": "شناسایی سیستم / فیلتر کالمن / همجوشی حسگرها",
+          "Robot Kinematics / Dynamics": "سینماتیک / دینامیک ربات",
+          "AUV / ROV / Underwater Robotics": "AUV / ROV / رباتیک زیرآبی",
+          "Trajectory Planning / Motion Planning": "برنامه‌ریزی مسیر حرکت / برنامه‌ریزی حرکت",
+          "Manipulator / Mobile Robot Control": "کنترل بازوی رباتیکی / ربات متحرک",
+          "SLAM / Localization / Navigation": "SLAM / مکان‌یابی / ناوبری",
+          "ROS / ROS 2 / Gazebo / Robotics Simulation": "ROS / ROS 2 / Gazebo / شبیه‌سازی رباتیک",
+          "Embedded / Real-Time / Mechatronic Control": "کنترل نهفته / بلادرنگ / مکاترونیک",
+          "Statistics / SPSS": "آمار / SPSS",
+          "Machine Learning / Scikit-Learn": "یادگیری ماشین / Scikit-Learn",
+          "Neural Networks / Deep Learning / TensorFlow / Keras / PyTorch": "شبکه‌های عصبی / یادگیری عمیق / TensorFlow / Keras / PyTorch",
+          "Computer Vision / Convolutional Networks / OpenCV": "بینایی ماشین / شبکه‌های کانولوشنی / OpenCV",
+          "Natural Language Processing / Large Language Models / BERTopic": "پردازش زبان طبیعی / مدل‌های زبانی بزرگ / BERTopic",
+          "R Programming / ggplot / dplyr / caret / tidyverse": "برنامه‌نویسی R / ggplot / dplyr / caret / tidyverse",
+          "System Administration / PowerShell": "مدیریت سیستم / PowerShell"
+};
+            document.querySelectorAll("#skills .skill-title > span:first-child").forEach((label) => {
+              const sourceLabel = label.textContent.trim();
+              const translatedLabel = groupedSkillTranslations[sourceLabel];
+              if (translatedLabel) {
+                label.textContent = translatedLabel;
+              }
+            });
+
+            const controlCategoryHeading = Array.from(document.querySelectorAll("#skills .skill-category-card h3"))
+              .find((heading) => heading.textContent.trim() === "Control Engineering & Robotics");
+            if (controlCategoryHeading) {
+              controlCategoryHeading.textContent = "مهندسی کنترل و رباتیک";
+            }
+
+            // Keep progress accessibility labels aligned with the visible Persian labels.
+            document.querySelectorAll("#skills .skill-item").forEach((item) => {
+              const label = item.querySelector(".skill-title > span:first-child");
+              const progress = item.querySelector(".progress");
+              if (label && progress) {
+                progress.setAttribute("aria-label", `${label.textContent.trim()} — سطح مهارت`);
+              }
+            });
           };
           document.body.appendChild(faScript);
         };
@@ -170,3 +223,4 @@
   </script>
 </body>
 </html>
+
