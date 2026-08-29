@@ -283,4 +283,66 @@ document.addEventListener("DOMContentLoaded", () => {
       closeSidebar();
     }
   });
+
+  // Language switcher: injected into the existing sidebar without removing
+  // or rewriting any current index.html content.
+  if (sidebar && !sidebar.querySelector(".language-switcher")) {
+    const switcher = document.createElement("div");
+    switcher.className = "language-switcher";
+    switcher.setAttribute("aria-label", "Language switcher");
+
+    const isPersian = /(?:^|\/)index-fa\.html(?:$|[?#])/.test(window.location.pathname + window.location.search + window.location.hash);
+
+    switcher.innerHTML = `
+      <a class="language-flag ${isPersian ? "" : "active"}" href="index.html" lang="en" hreflang="en" aria-label="English version" title="English"><span>EN</span></a>
+      <a class="language-flag ${isPersian ? "active" : ""}" href="index-fa.html" lang="fa" hreflang="fa" aria-label="نسخه فارسی" title="فارسی"><span>FA</span></a>
+    `;
+
+    const profile = sidebar.querySelector(".profile");
+    sidebar.insertBefore(switcher, profile || sidebar.firstChild);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("portfolio-language-switcher-style")) return;
+  const style = document.createElement("style");
+  style.id = "portfolio-language-switcher-style";
+  style.textContent = `
+    .language-switcher {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: -8px 0 18px;
+      direction: ltr;
+    }
+    .language-flag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      min-width: 64px;
+      min-height: 36px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 10px;
+      background: rgba(255,255,255,.07);
+      color: #dbe6f7;
+      text-decoration: none;
+      font: 650 .78rem/1 "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .language-flag:hover {
+      background: rgba(255,255,255,.15);
+      border-color: rgba(255,255,255,.28);
+      transform: translateY(-1px);
+    }
+    .language-flag.active {
+      background: rgba(96,165,250,.22);
+      border-color: rgba(96,165,250,.65);
+      color: #fff;
+    }
+    .language-flag span { font-size: .78rem; letter-spacing: .04em; }
+  `;
+  document.head.appendChild(style);
 });

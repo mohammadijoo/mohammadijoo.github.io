@@ -1,0 +1,176 @@
+/* Persian / RTL overrides for index-fa.html.
+   The English design remains in css/style.css; this file only mirrors layout
+   direction and applies Persian typography. */
+
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+html[lang="fa"] {
+  direction: rtl;
+}
+
+html[lang="fa"] body {
+  direction: rtl;
+  text-align: right;
+  font-family: "Vazir", "Vazirmatn", Tahoma, Arial, sans-serif;
+}
+
+html[lang="fa"] .mobile-brand,
+html[lang="fa"] .profile,
+html[lang="fa"] .sidebar-footer,
+html[lang="fa"] .btn,
+html[lang="fa"] .nav-link,
+html[lang="fa"] .social-links a,
+html[lang="fa"] .project-card a,
+html[lang="fa"] .project-links a,
+html[lang="fa"] .publication-links a,
+html[lang="fa"] .skill-title,
+html[lang="fa"] .chip-group span,
+html[lang="fa"] .meta,
+html[lang="fa"] .tags {
+  font-family: "Vazir", "Vazirmatn", Tahoma, Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+html[lang="fa"] .profile h1,
+html[lang="fa"] .hero-content h2,
+html[lang="fa"] .section-heading h2,
+html[lang="fa"] .skill-category-card h3,
+html[lang="fa"] .courses-intro-content h3,
+html[lang="fa"] .donation-card h3 {
+  letter-spacing: 0;
+}
+
+html[lang="fa"] .eyebrow {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Mirror the desktop shell. */
+@media (min-width: 1025px) {
+  html[lang="fa"] .sidebar {
+    inset: 0 0 0 auto;
+    box-shadow: -14px 0 45px rgba(15, 23, 42, 0.20);
+    background:
+      radial-gradient(circle at top right, rgba(59, 130, 246, 0.30), transparent 35%),
+      var(--bg-sidebar);
+  }
+
+  html[lang="fa"] .content {
+    margin-left: 0;
+    margin-right: var(--sidebar-width);
+  }
+}
+
+/* Sidebar and navigation details. */
+html[lang="fa"] .side-nav {
+  text-align: right;
+}
+
+html[lang="fa"] .nav-link.active {
+  box-shadow: inset -4px 0 0 #60a5fa;
+}
+
+html[lang="fa"] .resume-link {
+  text-align: center;
+}
+
+/* Lists and timeline are mirrored to the reading direction. */
+html[lang="fa"] .about-grid ul,
+html[lang="fa"] .card ul {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+html[lang="fa"] .timeline::before {
+  left: auto;
+  right: 12px;
+}
+
+html[lang="fa"] .timeline-item {
+  grid-template-columns: 26px 1fr;
+}
+
+/* Progress labels retain number readability while following RTL content. */
+html[lang="fa"] .skill-title {
+  direction: rtl;
+}
+
+html[lang="fa"] .progress,
+html[lang="fa"] .progress-bar {
+  direction: ltr;
+}
+
+/* Keep identifiers, addresses, URLs and programming tokens visually stable. */
+html[lang="fa"] code,
+html[lang="fa"] .wallet-box code,
+html[lang="fa"] .contact-card span,
+html[lang="fa"] .project-links,
+html[lang="fa"] [dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+html[lang="fa"] .wallet-box code,
+html[lang="fa"] .contact-card span {
+  text-align: left;
+}
+
+html[lang="fa"] .courses-intro-content p,
+html[lang="fa"] .lifestyle-card p {
+  text-align: justify;
+  text-align-last: right;
+}
+
+html[lang="fa"] .back-to-top {
+  right: auto;
+  left: 22px;
+}
+
+/* Course cards: Persian prose is RTL; product/course acronyms remain usable. */
+html[lang="fa"] .courses-section .card-content {
+  text-align: right;
+}
+
+html[lang="fa"] .courses-section .card-content h4,
+html[lang="fa"] .courses-section .card-content h5 {
+  font-family: "Vazir", "Vazirmatn", Tahoma, Arial, sans-serif;
+}
+
+/* Mobile/tablet sidebar should enter from the right on the Persian page. */
+@media (max-width: 1024px) {
+  html[lang="fa"] .sidebar {
+    inset: 0 0 0 auto;
+    transform: translateX(105%);
+    box-shadow: -14px 0 45px rgba(15, 23, 42, 0.20);
+  }
+
+  html[lang="fa"] .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  html[lang="fa"] .content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  html[lang="fa"] .mobile-header {
+    direction: rtl;
+  }
+}
+
+@media (max-width: 760px) {
+  html[lang="fa"] .courses-intro-content p {
+    text-align: right;
+  }
+}
+
+
+/* Explicit user-requested English publication line: keep English and LTR. */
+html[lang="fa"] .preserve-english-ltr {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  text-align: left !important;
+  text-align-last: left !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
