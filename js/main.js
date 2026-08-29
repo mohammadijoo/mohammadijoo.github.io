@@ -166,12 +166,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Active sidebar link while scrolling
+  let lastActiveNavLink = null;
+
+  function getSidebarScrollContainer(link) {
+    let element = link?.parentElement;
+
+    while (element && element !== document.body) {
+      const styles = window.getComputedStyle(element);
+      const canScrollVertically =
+        /(auto|scroll|overlay)/.test(styles.overflowY) &&
+        element.scrollHeight > element.clientHeight + 1;
+
+      if (canScrollVertically) {
+        return element;
+      }
+
+      if (element === sidebar) break;
+      element = element.parentElement;
+    }
+
+    return sidebar;
+  }
+
+  function keepActiveNavLinkVisible(link) {
+    if (!link || !sidebar) return;
+
+    const scrollContainer = getSidebarScrollContainer(link);
+    if (!scrollContainer || scrollContainer.scrollHeight <= scrollContainer.clientHeight) {
+      return;
+    }
+
+    const linkRect = link.getBoundingClientRect();
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const safeGap = 20;
+    const visibleTop = containerRect.top + safeGap;
+    const visibleBottom = containerRect.bottom - safeGap;
+
+    if (linkRect.top < visibleTop) {
+      scrollContainer.scrollBy({
+        top: linkRect.top - visibleTop,
+        behavior: "smooth",
+      });
+    } else if (linkRect.bottom > visibleBottom) {
+      scrollContainer.scrollBy({
+        top: linkRect.bottom - visibleBottom,
+        behavior: "smooth",
+      });
+    }
+  }
+
   function updateActiveNavLink() {
     let currentSectionId = "";
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
 
       /*
         180px offset means:
@@ -183,14 +231,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    let activeLink = null;
+
     navLinks.forEach((link) => {
       const linkTarget = link.getAttribute("href");
+      const isActive = linkTarget === `#${currentSectionId}`;
 
-      link.classList.toggle(
-        "active",
-        linkTarget === `#${currentSectionId}`
-      );
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        activeLink = link;
+      }
     });
+
+    // Keep the newly active item inside the visible portion of the sidebar.
+    // This scrolls the sidebar itself, never the main page.
+    if (activeLink && activeLink !== lastActiveNavLink) {
+      keepActiveNavLinkVisible(activeLink);
+      lastActiveNavLink = activeLink;
+    }
   }
 
   window.addEventListener("scroll", updateActiveNavLink);
