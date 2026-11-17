@@ -24,7 +24,7 @@ function initializeInteractions() {
   // multi-language repositories into their current unified repositories.
   const projectGrid = document.querySelector("#projects .project-grid");
 
-  if (projectGrid) {
+  if (projectGrid && projectGrid.dataset.staticProjects !== "true") {
     const academyProjects = [
       {
         icon: "🤖",
@@ -416,11 +416,11 @@ function initializeSwitcherStyle() {
     initialized = true;
     initializeSwitcherStyle();
     initializeInteractions();
+    document.documentElement.classList.add("portfolio-interactive");
   }
 
   window.initializePortfolio = initializePortfolio;
-  // The English page initializes automatically. The mirrored Persian page
-  // explicitly initializes on its copied DOM before applying translations.
+  // Both independent HTML pages initialize optional interface interactions.
   if (!manualInit) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", initializePortfolio, { once: true });

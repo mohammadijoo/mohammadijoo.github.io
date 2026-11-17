@@ -1,11 +1,10 @@
-"""Browser regression tests for the portfolio's mirrored Persian page."""
+"""Browser regression tests for the independent static Persian portfolio."""
 import functools
 import http.server
 import re
 import threading
 import unittest
 from pathlib import Path
-from urllib.parse import urlsplit
 from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,69 +42,71 @@ class PortfolioLocalizationTests(unittest.TestCase):
             else route.abort()
         ))
 
-    def open_persian(self, status="ready"):
-        self.page.goto(self.origin + "/index-fa.html", wait_until="domcontentloaded")
-        expect(self.page.locator("html")).to_have_attribute(
-            "data-fa-status", status, timeout=20000
-        )
+    def open_persian(self, page=None):
+        page = page or self.page
+        page.goto(self.origin + "/index-fa.html", wait_until="domcontentloaded")
+        return page
 
-    def assert_persian_content(self):
-        expect(self.page.locator("html")).to_have_attribute("lang", "fa")
-        expect(self.page.locator("html")).to_have_attribute("dir", "rtl")
-        expect(self.page.locator('a.nav-link[href="#home"]')).to_have_text("خانه")
-        expect(self.page.locator('a.nav-link[href="#projects"]')).to_have_text("پروژه‌ها")
-        expect(self.page.locator("#home .hero-content h2")).to_contain_text("ابوالفضل محمدی‌جو")
-        expect(self.page.locator("a.resume-link")).to_have_attribute(
+    def assert_persian_content(self, page):
+        expect(page.locator("html")).to_have_attribute("lang", "fa")
+        expect(page.locator("html")).to_have_attribute("dir", "rtl")
+        expect(page.locator('a.nav-link[href="#home"]')).to_have_text("خانه")
+        expect(page.locator('a.nav-link[href="#projects"]')).to_have_text("پروژه‌ها")
+        expect(page.locator("#home .hero-content h2")).to_contain_text("ابوالفضل محمدی‌جو")
+        expect(page.locator("a.resume-link")).to_have_attribute(
             "href", "files/CV_Abolfazl_Mohammadijoo_FA.pdf"
         )
-
-    def test_persian_translates_static_and_dynamic_content(self):
-        self.open_persian()
-        self.assert_persian_content()
-        expect(self.page.locator("[data-academy-project]")).to_have_count(3)
-        expect(self.page.locator("[data-academy-project]").first.locator("p")).to_contain_text(
+        expect(page.locator("[data-academy-project]")).to_have_count(3)
+        expect(page.locator("[data-academy-project]").first.locator("p")).to_contain_text(
             re.compile(r"[\u0600-\u06ff]")
         )
-        expect(self.page.locator('.language-flag.active')).to_have_text("FA")
-        expect(self.page.locator("#faLocalizationNotice")).to_have_count(0)
-        for path in ("main.js", "fa-localize.js"):
-            expect(self.page.locator(f'script[src*="{path}?v="]')).to_have_count(1)
-        self.page.evaluate("window.initializePortfolio(); window.localizePortfolioToPersian(document.body)")
-        expect(self.page.locator("[data-academy-project]")).to_have_count(3)
+        expect(page.locator(".language-flag.active")).to_have_text("FA")
+        expect(page.locator('script[src*="fa-localize.js"]')).to_have_count(0)
+        expect(page.locator("#faLocalizationNotice, #faLoader")).to_have_count(0)
+        for section in ("home", "about", "experience", "projects", "skills",
+                        "education", "publication", "lifestyle", "courses", "contact", "donations"):
+            expect(page.locator("#" + section)).to_have_count(1)
 
-    def test_main_script_network_failure_does_not_block_translation(self):
+    def test_persian_html_with_javascript_disabled(self):
+        context = self.browser.new_context(java_script_enabled=False)
+        self.addCleanup(context.close)
+        page = context.new_page()
+        page.route("**/*", lambda route: (
+            route.continue_() if route.request.url.startswith(self.origin + "/")
+            else route.abort()
+        ))
+        self.assert_persian_content(self.open_persian(page))
+
+    def test_persian_does_not_fetch_english_or_localizer(self):
+        forbidden = []
+        def reject(route):
+            forbidden.append(route.request.url)
+            route.abort()
+        self.page.route("**/index.html", reject)
+        self.page.route("**/js/fa-localize.js*", reject)
+        self.open_persian()
+        self.assert_persian_content(self.page)
+        self.assertEqual(forbidden, [])
+
+    def test_main_network_failure_leaves_static_persian(self):
         self.page.route("**/js/main.js?*", lambda route: route.abort())
-        self.open_persian("degraded")
-        self.assert_persian_content()
-        expect(self.page.locator("#faLocalizationNotice")).to_be_visible()
+        self.open_persian()
+        self.assert_persian_content(self.page)
 
-    def test_main_initializer_exception_does_not_block_translation(self):
+    def test_main_runtime_failure_leaves_static_persian(self):
         self.page.route("**/js/main.js?*", lambda route: route.fulfill(
             content_type="application/javascript",
-            body='window.initializePortfolio = () => { throw new Error("test failure"); };'
+            body='throw new Error("test failure");'
         ))
-        self.open_persian("degraded")
-        self.assert_persian_content()
-        expect(self.page.locator("#faLocalizationNotice")).to_be_visible()
+        self.open_persian()
+        self.assert_persian_content(self.page)
 
-    def test_localizer_network_failure_is_visible(self):
-        self.page.route("**/js/fa-localize.js?*", lambda route: route.abort())
-        self.open_persian("error")
-        expect(self.page.locator("#faLocalizationNotice")).to_be_visible()
-        expect(self.page.locator("#faLocalizationNotice")).to_have_attribute("role", "alert")
-
-    def test_localizer_runtime_exception_is_visible(self):
-        self.page.route("**/js/fa-localize.js?*", lambda route: route.fulfill(
-            content_type="application/javascript",
-            body='window.localizePortfolioToPersian = () => { throw new Error("test failure"); };'
-        ))
-        self.open_persian("error")
-        expect(self.page.locator("#faLocalizationNotice")).to_be_visible()
-
-    def test_mirror_fetch_failure_is_visible(self):
-        self.page.route("**/index.html", lambda route: route.fulfill(status=503, body="unavailable"))
-        self.open_persian("error")
-        expect(self.page.locator("#faLocalizationNotice")).to_be_visible()
+    def test_persian_project_cards_not_duplicated(self):
+        self.open_persian()
+        expect(self.page.locator("html")).to_have_class(re.compile("portfolio-interactive"))
+        self.assert_persian_content(self.page)
+        self.page.evaluate("window.initializePortfolio()")
+        expect(self.page.locator("[data-academy-project]")).to_have_count(3)
 
     def test_english_page_is_unchanged(self):
         self.page.goto(self.origin + "/index.html", wait_until="domcontentloaded")
@@ -121,9 +122,17 @@ class PortfolioLocalizationTests(unittest.TestCase):
         self.open_persian()
         self.page.locator("#menuToggle").click()
         expect(self.page.locator("#menuToggle")).to_have_attribute("aria-expanded", "true")
-        expect(self.page.locator('a.nav-link[href="#home"]')).to_have_text("خانه")
         self.page.locator('a.nav-link[href="#home"]').click()
         expect(self.page.locator("#menuToggle")).to_have_attribute("aria-expanded", "false")
+
+    def test_mobile_navigation_when_main_unavailable(self):
+        self.page.set_viewport_size({"width": 390, "height": 844})
+        self.page.route("**/js/main.js?*", lambda route: route.abort())
+        self.open_persian()
+        expect(self.page.locator(".language-flag.active")).to_be_visible()
+        expect(self.page.locator('a.nav-link[href="#home"]')).to_be_visible()
+        self.page.locator('a.nav-link[href="#home"]').click()
+        expect(self.page).to_have_url(re.compile(r"#home$"))
 
 
 if __name__ == "__main__":

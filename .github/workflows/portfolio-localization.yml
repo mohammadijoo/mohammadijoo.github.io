@@ -23,5 +23,5 @@ jobs:
         run: |
           python -m pip install playwright==1.56.0
           python -m playwright install --with-deps chromium
-      - name: Test localization and fallback behavior
+      - name: Test static Persian content and optional interactions
         run: python -m unittest discover -s tests -p 'test_portfolio_localization.py' -v
