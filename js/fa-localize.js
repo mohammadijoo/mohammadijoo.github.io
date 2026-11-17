@@ -630,5 +630,6 @@
   }
 
   window.localizePortfolioToPersian = localize;
-  localize();
+  // Keep standalone behavior, while allowing the mirror to control ordering.
+  if (document.currentScript?.dataset.manualInit !== "true") localize();
 })();

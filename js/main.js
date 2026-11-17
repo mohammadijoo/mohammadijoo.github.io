@@ -6,7 +6,12 @@
 // 5. Progress-bar animation
 // 6. Back-to-top button
 
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
+  "use strict";
+  let initialized = false;
+  const manualInit = document.currentScript?.dataset.manualInit === "true";
+
+function initializeInteractions() {
   const sidebar = document.getElementById("sidebar");
   const menuToggle = document.getElementById("menuToggle");
   const sidebarOverlay = document.getElementById("sidebarOverlay");
@@ -360,9 +365,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const profile = sidebar.querySelector(".profile");
     sidebar.insertBefore(switcher, profile || sidebar.firstChild);
   }
-});
+}
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeSwitcherStyle() {
   if (document.getElementById("portfolio-language-switcher-style")) return;
   const style = document.createElement("style");
   style.id = "portfolio-language-switcher-style";
@@ -404,4 +409,23 @@ document.addEventListener("DOMContentLoaded", () => {
     .language-flag span { font-size: .78rem; letter-spacing: .04em; }
   `;
   document.head.appendChild(style);
-});
+}
+
+  function initializePortfolio() {
+    if (initialized) return;
+    initialized = true;
+    initializeSwitcherStyle();
+    initializeInteractions();
+  }
+
+  window.initializePortfolio = initializePortfolio;
+  // The English page initializes automatically. The mirrored Persian page
+  // explicitly initializes on its copied DOM before applying translations.
+  if (!manualInit) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializePortfolio, { once: true });
+    } else {
+      initializePortfolio();
+    }
+  }
+})();
